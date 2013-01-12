@@ -1,17 +1,9 @@
 from django.conf.urls import patterns, include, url
 
-# Uncomment the next two lines to enable the admin:
-# from django.contrib import admin
-# admin.autodiscover()
 
 urlpatterns = patterns('',
-    # Examples:
-    # url(r'^$', 'sbf.views.home', name='home'),
-    # url(r'^sbf/', include('sbf.foo.urls')),
-
-    # Uncomment the admin/doc line below to enable admin documentation:
-    # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
-
-    # Uncomment the next line to enable the admin:
-    # url(r'^admin/', include(admin.site.urls)),
+    url(r'^flat/$', 'flat.views.index'),
+    url(r'^flat/(?P<poll_id>\d+)/$', 'flat.views.detail'),
+    url(r'^flat/(?P<poll_id>\d+)/results/$', 'flat.views.results'),
+    url(r'^flat/(?P<poll_id>\d+)/vote/$', 'flat.views.vote'),
 )
